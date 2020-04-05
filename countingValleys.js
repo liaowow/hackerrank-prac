@@ -62,3 +62,6 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+countingValleys(10, "UDDDUDUUDU")

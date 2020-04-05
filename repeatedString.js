@@ -80,3 +80,6 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+repeatedString("a", 1000000000000)

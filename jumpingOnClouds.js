@@ -54,3 +54,6 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+jumpingOnClouds([0, 1, 0, 0, 0, 1, 0])

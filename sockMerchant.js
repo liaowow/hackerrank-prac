@@ -58,3 +58,6 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+sockMerchant(5, [1,2,1,2,1])
