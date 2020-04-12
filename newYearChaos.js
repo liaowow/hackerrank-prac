@@ -92,15 +92,19 @@ function minimumBribes2(q) {
 /*** SOLUTION #3 via StackExchange ***/
 /*** https://codereview.stackexchange.com/questions/217867/new-year-chaos-javascript-needs-to-be-sped-up ***/
 function minimumBribes3(queue) {
-    var bribes = 0, i, j;
-    for (i = 0; i < queue.length; i++) {
-        const pos = queue[i], at = i + 1;
+    let bribes = 0
+    for (let i = 0; i < queue.length; i++) {
+        const pos = queue[i], at = i + 1
+        // `pos` represents the original position; `at` represents current position
         if (pos - at > 2) { 
         console.log("Too chaotic") 
         return
         } 
-        for (j = pos - 2; j < i; j++) {
-            if (queue[j] > pos) { bribes++ }
+        // only check the the position down 2 from the current position to the current index
+        for (let j = pos - 2; j < i; j++) {
+            if (queue[j] > pos) { 
+              bribes++ 
+            }
         }
     } 
     console.log(bribes)
