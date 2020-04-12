@@ -23,7 +23,7 @@ function readLine() {
 }
 
 // Complete the minimumBribes function below.
-/*** MY SOLUTION ***/
+/*** MY SOLUTION (did not solve cases where bribes happen in the new order) ***/
 function minimumBribes(q) {
   let finalArr = q.slice()
   let sortedArr = q.sort((a, b) => a - b)
@@ -48,13 +48,16 @@ function minimumBribes(q) {
 function minimumBribes1(q) {
     let swaps = 0
     for (let i = 0; i < q.length; i++) {
+      // q[i] represents the original position; (i + 1) represents the current position
       let bribes = q[i] - (i + 1)
+      if (bribes > 2) {
+        console.log('Too chaotic')
+        return
+      }
+      // make sure the furthest position (q[i] - 2) doesn't become negative
       let maxAdvance = q[i] - 2 > 0 ? q[i] - 2 : 0
-        if (bribes > 2) {
-          console.log('Too chaotic')
-          return
-        }
       for (let j = maxAdvance; j < i; j++) {
+        // q[j] represents the person(s) ahead; q[i] represents current person
         if (q[j] > q[i]) swaps++
       }
     }
