@@ -23,7 +23,7 @@ function readLine() {
 }
 
 // Complete the minimumBribes function below.
-/*** MY SOLUTION (did not solve cases where bribes happen in the new order) ***/
+/*** MY SOLUTION (did not solve cases where bribes happen in the updated queue) ***/
 function minimumBribes(q) {
   let finalArr = q.slice()
   let sortedArr = q.sort((a, b) => a - b)
@@ -69,15 +69,22 @@ function minimumBribes1(q) {
 /*** https://github.com/Amjad-H-Ali/New-Year-Chaos/blob/master/JS/app.js ***/
 function minimumBribes2(q) {
     let counter = 0
+    // loop thru the queue from the end
     for (let i = q.length - 1; i >= 0; i--) {
-        if (q[i] - (i + 1) > 2) {
-            console.log("Too chaotic")
-            return
+      // check if current person has bribed more than twice: 
+      // original position (q[i]) minus current position (i + 1)
+      if (q[i] - (i + 1) > 2) {
+          console.log("Too chaotic")
+          return
+      }
+      // loop from one index before the original index (stay at 0 if we go past index 0)...
+      // ...all the way to current index
+      for (let j = Math.max(0, q[i] - 2); j < i; j++) {
+        // check if any integer in the previous index is bigger than the integer in the current index
+        if(q[j] > q[i]) {
+            counter++
         }
-        for (let j = Math.max(0, q[i] - 2); j < i; j++ ) 
-            if(q[j] > q[i]) {
-                counter++
-            }
+      }
     }
     console.log(counter)
 }
