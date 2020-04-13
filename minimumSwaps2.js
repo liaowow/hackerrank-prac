@@ -32,15 +32,15 @@ function minimumSwaps(arr) {
         // check if current item is correctNum
         // if so, no need to swap; if not...
         if (arr[i] !== correctNum) {
-        // find the idx of correctNum in current arr (starting from the current idx)
-        let correctIdx = arr.indexOf(correctNum, i)
-        /*** start swapping ***/
-        // (1) reassign element with correctIdx to the current element
-        arr[correctIdx] = arr[i]
-        // (2) reassign current element to correctNum
-        arr[i] = correctNum
-        /*** end swapping ***/
-        swaps++
+            // find the idx of correctNum in current arr (starting from the current idx)
+            let correctIdx = arr.indexOf(correctNum, i)
+            /*** start swapping ***/
+            // (1) reassign element with correctIdx to the current element
+            arr[correctIdx] = arr[i]
+            // (2) reassign current element to correctNum
+            arr[i] = correctNum
+            /*** end swapping ***/
+            swaps++
         }
     }
     return swaps
