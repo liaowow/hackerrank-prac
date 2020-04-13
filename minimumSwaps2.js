@@ -40,7 +40,7 @@ function minimumSwaps(arr) {
         // (2) reassign current element to correctNum
         arr[i] = correctNum
         /*** end swapping ***/
-        ++swaps
+        swaps++
         }
     }
     return swaps
