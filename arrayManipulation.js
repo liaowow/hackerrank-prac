@@ -50,6 +50,52 @@ function arrayManipulation(n, queries) {
   return maxVal
 }
 
+/*** SOLUTION#1 ***/
+function arrayManipulation1(n, queries) {
+    const arr = new Array(n).fill(0);
+    let result = 0;
+  
+    queries.forEach(([a, b, k]) => {
+        arr[a - 1] += k;
+        if (b < arr.length) {
+            // arr[b] should not be added bc index b is exclusive
+            arr[b] -= k;
+        }
+    });
+  
+    arr.reduce((a, b) => {
+        const acc = a + b;
+        result = Math.max(result, acc);
+        return acc;
+    }, 0);
+  
+    return result;
+}
+
+/*** SOLUTION#2 ***/
+const arrayManipulation2 = (n, queries) => {
+    const arr = new Array(n).fill(0);
+    let max = 0;
+  
+    for (let i = queries.length - 1; i >= 0; i--) {
+      const [a, b, k] = queries[i];
+      arr[a - 1] += k;
+      if (b < arr.length) {
+        arr[b] -= k;
+      }
+    }
+
+    for (let j = 1; j < n; j++) {
+      arr[j] += arr[j - 1];
+    }
+
+    for (let k = arr.length - 1; k >= 0; k--) {
+      max = Math.max(max, arr[k]);
+    }
+    
+    return max;
+}
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
