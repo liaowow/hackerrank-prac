@@ -63,8 +63,8 @@ function arrayManipulation1(n, queries) {
         }
     });
   
-    arr.reduce((a, b) => {
-        const acc = a + b;
+    arr.reduce((prev, curr) => {
+        const acc = prev + curr;
         result = Math.max(result, acc);
         return acc;
     }, 0);
