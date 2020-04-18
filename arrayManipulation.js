@@ -92,7 +92,7 @@ const arrayManipulation2 = (n, queries) => {
     for (let k = arr.length - 1; k >= 0; k--) {
       max = Math.max(max, arr[k]);
     }
-    
+
     return max;
 }
 
@@ -117,3 +117,10 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+arrayManipulation1(5, [
+    [1, 2, 100],
+    [2, 5, 100],
+    [3, 4, 100]
+  ])
