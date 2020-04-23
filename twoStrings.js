@@ -67,3 +67,7 @@ function main() {
 
     ws.end();
 }
+
+/******* TEST CASE(S) *******/
+twoStrings("hi", "world")
+twoStringsSmallCases("hello", "world")
