@@ -25,7 +25,6 @@ function readLine() {
 }
 
 // Complete the twoStrings function below.
-
 /*** MY SOLUTION: did not pass large cases ***/
 function twoStringsSmallCases(s1, s2) {
     let s1Arr = s1.split('')
@@ -69,5 +68,5 @@ function main() {
 }
 
 /******* TEST CASE(S) *******/
-twoStrings("hi", "world")
-twoStringsSmallCases("hello", "world")
+twoStrings("hello", "world")
+twoStringsSmallCases("hi", "world")
