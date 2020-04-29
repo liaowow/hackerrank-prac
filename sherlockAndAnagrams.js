@@ -62,10 +62,34 @@ function isAnagram(str1, str2) {
 }
 
 /* helper function 3 of 3 */
+function countAnagrams(currIdx, arr) {
+    let count = 0
+    let currElement = arr[currIdx]
+    let remainingArr = arr.slice(currIdx + 1)
+
+    for (let i = 0; i < remainingArr.length; i++) {
+        if (currElement.length === remainingArr[i] && isAnagram(currElement, remainingArr[i])) {
+            count++
+        }
+    }
+
+    return count
+}
 
 function sherlockAndAnagrams(s) {
+    // first, check if there's any duplicate chars
+    let numOfDuplicates = s.split('').filter((char, idx) => s.indexOf(char) !== idx ).length
+    if (!numOfDuplicates) return 0
+    
+    // only run the following if there's a duplicate
+    let finalCount = 0
+    let subStringsArr = getAllSubstrings(s)
 
+    for (let i = 0; i < subStringsArr.length; i++) {
+        finalCount += countAnagrams(i, subStringsArr)
+    }
 
+    return finalCount
 }
 
 function main() {
