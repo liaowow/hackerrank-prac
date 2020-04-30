@@ -23,7 +23,7 @@ function reverseString3(str) {
 
 /******* TEST CASE(S) *******/
 reverseString1("coronavirus")
-reverseString2("world")
-reverseString3("pandemic")
+reverseString2("pandemic")
+reverseString3("world")
 
 // resource: https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/
