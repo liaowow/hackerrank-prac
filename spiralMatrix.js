@@ -1,3 +1,4 @@
+/* Create a function that takes an integer N and returns a NxN spiral matrix */
 function matrix(n) {
     // create empty array of arrays called 'results'
     // create a counter variable starting at 1
@@ -50,7 +51,8 @@ function matrix(n) {
     return results
 }
 
-// ES6
+/* Given a 2D array, print it in spiral form */
+// ES6 Solution
 function spiral(matrix) {
     const arr = [];
 
