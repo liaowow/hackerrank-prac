@@ -42,29 +42,47 @@ function countTriplets(arr, r) {
 
 /* Solution Using forEach */
 function countTripletsForEach(arr, r) {
+    // create an empty hash and counter
     let dict = {}
     let count = 0
-    arr.forEach(val=>{
-        if (!dict[val]) {dict[val] = {s1:0,s2:0,s3:0};}
-        if (!dict[val*r]) {dict[val*r] = {s1:0,s2:0,s3:0};}
-        count += dict[val].s3
-        dict[val*r].s3 += dict[val].s2
-        dict[val*r].s2 += 1
-    });
-    return count;
+    // go over each element in the arr
+    arr.forEach(el => {
+        // if the element is not inside the hash, create one...
+        //...where the value is another hash
+        if (!dict[el]) {
+            dict[el] = {
+                s1: 0,
+                s2: 0,
+                s3: 0
+            }
+        }
+        if (!dict[el * r]) {
+            dict[el * r] = {
+                s1: 0,
+                s2: 0,
+                s3: 0
+            }
+        }
+
+        count += dict[el].s3
+        dict[el * r].s3 += dict[el].s2
+        dict[el * r].s2 += 1
+    })
+
+    return count
 }
 
 /* Solution Using Reduce */
 function countTripletsReduce(arr, r) {
-    let dict = {};
     let count = 0;
-    arr.forEach(val=>{
-        if (!dict[val]) {dict[val] = {s1:0,s2:0,s3:0};}
-        if (!dict[val*r]) {dict[val*r] = {s1:0,s2:0,s3:0};}
-        count += dict[val].s3
-        dict[val*r].s3 += dict[val].s2
-        dict[val*r].s2 += 1
-    });
+    arr.reduce((acc, val) => {
+      if (!acc[val]) { acc[val] = { s1: 0, s2: 0, s3: 0 }; }
+      if (!acc[val * r]) { acc[val * r] = { s1: 0, s2: 0, s3: 0 }; }
+      count += acc[val].s3;
+      acc[val * r].s3 += acc[val].s2;
+      acc[val * r].s2 += 1;
+      return acc;
+    }, {});
     return count;
 }
 
@@ -91,3 +109,6 @@ countTriplets([1, 5, 5, 25, 125], 5)
 countTripletsForEach([1, 5, 5, 25, 125], 5)
 countTripletsReduce([1, 5, 5, 25, 125], 5)
 // countTriplets([1, 1, 1, 1, 1, ...], 1) <-- array of 100 elements, all 1s
+
+// resource:
+// https://www.hackerrank.com/challenges/count-triplets-1/forum
