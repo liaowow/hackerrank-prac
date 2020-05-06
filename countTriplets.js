@@ -76,14 +76,27 @@ function countTripletsForEach(arr, r) {
 function countTripletsReduce(arr, r) {
     let count = 0;
     arr.reduce((acc, val) => {
-      if (!acc[val]) { acc[val] = { s1: 0, s2: 0, s3: 0 }; }
-      if (!acc[val * r]) { acc[val * r] = { s1: 0, s2: 0, s3: 0 }; }
-      count += acc[val].s3;
-      acc[val * r].s3 += acc[val].s2;
-      acc[val * r].s2 += 1;
-      return acc;
-    }, {});
-    return count;
+      if (!acc[val]) { 
+          acc[val] = { 
+              s1: 0, 
+              s2: 0, 
+              s3: 0 
+          }
+      }
+
+      if (!acc[val * r]) { 
+          acc[val * r] = { 
+              s1: 0, 
+              s2: 0, 
+              s3: 0 
+          } 
+      }
+      count += acc[val].s3
+      acc[val * r].s3 += acc[val].s2
+      acc[val * r].s2 += 1
+      return acc
+    }, {})
+    return count
 }
 
 function main() {
