@@ -125,3 +125,4 @@ countTripletsReduce([1, 5, 5, 25, 125], 5)
 
 // resource:
 // https://www.hackerrank.com/challenges/count-triplets-1/forum
+// https://whoan.me/hacker-rank-challenge-1.html
