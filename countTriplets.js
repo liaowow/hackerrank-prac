@@ -47,8 +47,7 @@ function countTripletsForEach(arr, r) {
     let count = 0
     // go over each element in the arr
     arr.forEach(el => {
-        // if the element is not inside the hash, create one...
-        //...where the value is another hash
+        /* Step#1: Create hashmaps for the value AND (value * r), if not already exist */
         if (!dict[el]) {
             dict[el] = {
                 s1: 0,
