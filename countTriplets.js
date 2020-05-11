@@ -47,25 +47,26 @@ function countTripletsForEach(arr, r) {
     let count = 0
     // go over each element in the arr
     arr.forEach(el => {
-        /* Step#1: Create hashmaps for the value AND (value * r), if not already exist */
+        /* Step 1: Create hashmaps for current element AND (element * r), if not already exist */
         if (!dict[el]) {
             dict[el] = {
                 s1: 0,
-                s2: 0,
-                s3: 0
+                s2: 0, // num of potential doubles
+                s3: 0 // num of potential triplets
             }
         }
         if (!dict[el * r]) {
             dict[el * r] = {
                 s1: 0,
-                s2: 0,
-                s3: 0
+                s2: 0, // num of potential doubles
+                s3: 0 // num of potential triplets
             }
         }
-
-        count += dict[el].s3
-        dict[el * r].s3 += dict[el].s2
-        dict[el * r].s2 += 1
+        
+        /* Step 2: count num of dobles and triplets */
+        count += dict[el].s3 // triplets are here!
+        dict[el * r].s3 += dict[el].s2 // if current element has potential doubles, it means (element * r) will have potential triplets
+        dict[el * r].s2 += 1 // because dict[el * r] exist, this current element * r has a potential double!
     })
 
     return count
