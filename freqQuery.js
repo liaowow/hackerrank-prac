@@ -24,7 +24,7 @@ function readLine() {
 
 // Complete the freqQuery function below.
 function freqQuery(queries) {
-
+    
 
 }
 
@@ -45,3 +45,7 @@ function main() {
 
     ws.end();
 }
+
+// resource
+// https://www.hackerrank.com/challenges/frequency-queries/forum
+// https://codereview.stackexchange.com/questions/202546/frequency-queries-hackerrank
