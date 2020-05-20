@@ -101,6 +101,11 @@ function freqQueryAll1(arr) {
 }
 
 /*** Solution 2 ***/
+/* 
+- action === 1: Insert `value` in your data structure.
+- action === 2: Delete one occurence of `value` from your data structure, if present.
+- action === 3: Check if any integer is present whose frequency is exactly `value`. If yes, print 1 else 0.
+*/
 function freqQueryAll2(queries) {
     const frequencies = [];
     const frequencyTracker = [];
@@ -110,7 +115,7 @@ function freqQueryAll2(queries) {
         const action = query[0];
         const value = query[1];
         let index;
-
+        
         if (action === 1 || action === 2) {
             index = frequencies[value];
             frequencyTracker[index] ? --frequencyTracker[index] : null;
