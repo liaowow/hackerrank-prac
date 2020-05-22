@@ -44,33 +44,33 @@ function countTriplets(arr, r) {
 function countTripletsForEach(arr, r) {
     // create an empty hash and counter
     let dict = {}
-    let count = 0
+    let count
     // go over each element in the arr
     arr.forEach(el => {
         /* Step 1: Create hashmaps for current element AND (element * r), if not already exist */
         if (!dict[el]) {
             dict[el] = {
-                s1: 0,
-                s2: 0, // num of potential doubles
-                s3: 0 // num of potential triplets
+                potentialDs: 0, // num of potential doubles
+                potentialTs: 0 // num of potential triplets
             }
         }
         if (!dict[el * r]) {
             dict[el * r] = {
-                s1: 0,
-                s2: 0, // num of potential doubles
-                s3: 0 // num of potential triplets
+                potentialDs: 0, // num of potential doubles
+                potentialTs: 0 // num of potential triplets
             }
         }
         
-        /* Step 2: count num of dobles and triplets */
-        count += dict[el].s3 // triplets are here!
-        dict[el * r].s3 += dict[el].s2 // if current element has potential doubles, it means (element * r) will have potential triplets
-        dict[el * r].s2 += 1 // because dict[el * r] exist, this current element * r has a potential double!
+        /* Step 2: track num of potential doubles and triplets */
+        count += dict[el].potentialTs // current element's num of potential triplets is what we want
+        dict[el * r].potentialTs += dict[el].potentialDs // if current element already has potential doubles, (element * r) will form a potential triplet, so we concatenate these two counts 
+        dict[el * r].potentialDs += 1 // current element will be the first half of (element * r), forming a potential double, so we add 1 to the num of potential doubles for (element * r)
     })
 
     return count
 }
+
+countTripletsForEach([1, 5, 5, 25, 125], 5)
 
 /* Solution Using Reduce */
 function countTripletsReduce(arr, r) {
