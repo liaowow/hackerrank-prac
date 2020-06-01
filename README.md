@@ -1,10 +1,10 @@
 ## Overview
 
-Algorithm: A set of instructions for accomplishing a task.
+**Algorithm**: A set of instructions for accomplishing a task.
 
-Big O notation: A theoretical measurement of the *time* and *space* complexity of your algorithm/data sturcture. It's a convenient way to describe how fast a function growing (reference [here](https://yourbasic.org/algorithms/big-o-notation-explained/)).
+**Big O notation**: A theoretical measurement of the *time* and *space* complexity of your algorithm/data sturcture. It's a convenient way to describe how fast a function is growing (reference [here](https://yourbasic.org/algorithms/big-o-notation-explained/)).
 
-
+**Big O time** is the language and metric we use to describe the efficiency of algorithms.
 
 
 ### Resource
