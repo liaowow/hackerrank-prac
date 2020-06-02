@@ -1,4 +1,5 @@
-const twoSum = function(nums, target) {
+// My initial solution
+const twoSumMySolution = function(nums, target) {
     /*
     1. filter out nums that are bigger than target
     2. define 2 variables (num1 && num2) to save two sums
@@ -26,4 +27,20 @@ const twoSum = function(nums, target) {
     return result
 }
 
-twoSum([2, 7, 11, 15], 9)
+// Solution#1: O(n) - One-pass Hash Table
+function twoSum1(sums, target) {
+    let map = new Map
+    for (let i = 0; i < sums.length; i++) {
+        let theOtherNum = target - sums[i]
+        if (map.has(theOtherNum)) {
+            return [map.get(theOtherNum), i]
+        }
+        map.set(nums[i], i)
+    }
+}
+
+
+/*** Test Cases ***/
+twoSumMySolution([2, 7, 11, 15], 9)
+twoSum1([3, 3], 6)
+twoSum2([3, 2, 4], 6)
