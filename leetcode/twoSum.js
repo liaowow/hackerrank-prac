@@ -28,17 +28,28 @@ const twoSumMySolution = function(nums, target) {
 }
 
 // Solution#1: O(n) - One-pass Hash Table
-function twoSum1(sums, target) {
-    let map = new Map
-    for (let i = 0; i < sums.length; i++) {
-        let theOtherNum = target - sums[i]
-        if (map.has(theOtherNum)) {
-            return [map.get(theOtherNum), i]
+function twoSum1(nums, target) {
+    let map = new Map // storing current element's complement as key, and current element's index as value
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i]
+        // While we iterate and inserting elements into the table, we also look back to check if current element's complement already exists in the table. If it exists, we have found a solution and return immediately
+        if (map.has(complement)) {
+            return [map.get(complement), i]
         }
         map.set(nums[i], i)
     }
 }
 
+// Solution#2: also One-pass Hash Table
+function twoSum2(nums, target) {
+    let obj = {} // storing current element's complement as key, and current element's index as value
+    for (let i = 0; i < nums.length; i++) {
+        if (obj[nums[i]] >= 0) {
+            return [obj[nums[i]], i]
+        }
+        obj[target - nums[i]] = i
+    }
+}
 
 /*** Test Cases ***/
 twoSumMySolution([2, 7, 11, 15], 9)
