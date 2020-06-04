@@ -21,6 +21,11 @@ function reverseString3(str) {
     return (str === "") ? "" : reverseString3(str.substr(1) + str.charAt(0))
 }
 
+// Solution#4 -- using reduce
+function reverseString4(str) {
+    return str.split('').reduce((rev, char) => char + rev, '')
+}
+
 /******* TEST CASE(S) *******/
 reverseString1("coronavirus")
 reverseString2("pandemic")
