@@ -10,6 +10,11 @@ function reverseString2(str) {
     for (let i = str.length - 1; i >= 0; i--) {
         result += str[i]
     }
+
+    // ES6 syntax
+    // for (let char of str) {
+    //     result = char + result
+    // }
     
     return result
 }
@@ -21,9 +26,10 @@ function reverseString3(str) {
     return (str === "") ? "" : reverseString3(str.substr(1) + str.charAt(0))
 }
 
-// Solution#4 -- using reduce
+// Solution#4 -- using reduce, condensing each char down to a single string value
 function reverseString4(str) {
-    return str.split('').reduce((rev, char) => char + rev, '')
+    // reduce args: (1) arrow function (2) initial value for the function 
+    return str.split('').reduce((reversed, char) => char + reversed, '')
 }
 
 /******* TEST CASE(S) *******/
