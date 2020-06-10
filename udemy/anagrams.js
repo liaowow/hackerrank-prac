@@ -62,7 +62,12 @@ function buildCharMap(str) {
     return charMap
 }
 
-/* SOLUTION#2 -- create helper functions */
+/* SOLUTION#2 -- using .sort() */
 function anagrams2(stringA, stringB) {
-    
+    return cleanString(stringA) === cleanString(stringB)
+}
+
+// helper function
+function cleanString(str) {
+    return str.replace(/[^w]/g, '').toLowerCase().split('').sort().join('')
 }
