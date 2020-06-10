@@ -25,7 +25,7 @@ function chunk(array, size) {
     return finalArr
 }
 
-/* SOLUTION#1 */
+/* SOLUTION#1 -- think about the last element */
 function chunk1(array, size) {
     // create empty array to hold chunks called 'chunked'
     let chunkedArr = []
@@ -45,7 +45,18 @@ function chunk1(array, size) {
     return chunkedArr
 }
 
-/* SOLUTION#2 */
+/* SOLUTION#2 --using .slice() method */
 function chunk2(array, size) {
-    
+    // create an empty chunk array
+    // create 'index' starting at 0
+    // while index is less than array.length...
+        // ...push a slice of length 'size' from 'array' into 'chunked'
+        // ...add 'size' to index
+    const chunkedArr = []
+    let idx = 0
+    while (idx < array.length) {
+        chunkedArr.push(array.slice(idx, idx + size))
+        idx += size
+    }
+    return chunkedArr
 }
