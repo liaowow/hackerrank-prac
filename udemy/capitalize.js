@@ -18,7 +18,29 @@ function capitalize(str) {
     return newArr.join(' ')
 }
 
-/* SOLUTION#1 */
+/* SOLUTION#1 -- similar to mine */
 function capitalize1(str) {
+    const words = []
+    for (let word of str.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1))
+    }
+    return words.join(' ')
+}
 
+/* SOLUTION#2 */
+function capitalize2(str) {
+    // create a string called 'result' with first char capitalized
+    let result = str[0].toUpperCase()
+    // for each char in str
+        // if char to the left is a space
+            // capitalize it and add to result
+        // else, add to result
+    for (let i = 1; i < str.length; i++) {
+        if (str[i - 1] === ' ') {
+            result += str[i].toUpperCase()
+        } else {
+            result += str[i]
+        }
+    }
+    return result
 }
