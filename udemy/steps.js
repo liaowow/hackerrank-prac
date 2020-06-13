@@ -30,3 +30,24 @@ function steps(n) {
     }
 }
 
+/* SOLUTION#1 -- rows and columns */
+function steps1(n) {
+    // from 0 to n (iterating thru rows)
+        // create an empty string, 'stair'
+        // from 0 to n (iterating thru cols)
+            // if current column is equal to or less than current row
+                // add '#' to 'stair'
+            // else, add a space to 'stair'
+        // console log 'stair'
+    for (let row = 0; row < n; row++) {
+        let stair = ''
+        for (let col = 0; col < n; col++) {
+            if (col <= row) {
+                stair += '#'
+            } else {
+                stair += ' '
+            }
+        }
+        console.log(stair)
+    }
+}
