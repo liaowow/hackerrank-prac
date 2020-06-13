@@ -51,3 +51,31 @@ function steps1(n) {
         console.log(stair)
     }
 }
+
+/* SOLUTION#2 -- using recursion */
+function steps2(n, row = 0, stair = '') {
+    // base case: if (row === n) then we hit the end
+    // if 'stair' string's length === n then we are at the end of a row
+    // if length of the stair string is less than or equal to current row we're on...
+        //... add '#'
+    // else, add ' '
+    if (n === row) {
+        return;
+    }
+
+    if (n === stair.length) {
+        console.log(stair)
+        return steps2(n, row + 1)
+    }
+
+    if (stair.length <= row) {
+        stair += '#'
+    } else {
+        stair += ' '
+    }
+    steps2(n, row, stair)
+
+    // refactored code (line#71~76) via ternary:
+    // const add = stair.length <= row ? '#' : ' '
+    // steps2(n, row, stair + add)
+}
