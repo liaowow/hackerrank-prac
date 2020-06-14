@@ -45,6 +45,23 @@ function rotLeft(arr, d) {
     ***/
 }
 
+/* SOLUTION#1 -- using .splice() */
+function rotateLeft(array, n) {
+    n = n % array.length
+    return array.push(...array.splice(0, n))
+  }
+
+/* SOLUTION#2 -- O(n) */
+function rot(a) {
+    let last = a[0]
+    for (let i = 0; i < a.length; i++) {
+        let next = (i+1) % a.length
+        a[i] = a[next]
+    }
+   a[a.length-1] = last
+   return a;
+}
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
