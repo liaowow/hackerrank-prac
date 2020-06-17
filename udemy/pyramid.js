@@ -51,7 +51,7 @@ function pyramid1(n) {
         let level = ''
         // iterate over colomns
         for (let col = 0; col < (n * 2 - 1); col++) {
-            if (midPoint - row <= col && midPoint + row >= column) {
+            if (midPoint - row <= col && midPoint + row >= col) {
                 level += '#'
             } else {
                 level += ' '
@@ -82,3 +82,37 @@ function pyramid2(n, row = 0, level = '') {
     }
     pyramid(n, row, level + add)
 } 
+
+
+/* practicing recursion on my own */
+// add 2 more params: row (initialized to 0), tier (initialized to empty str)
+function pyramidPrac(n, row = 0, tier = '') {
+    // set base case: stop executing if n === row
+    if (n === row) {
+        return;
+    }
+    // set col to (n * 2 - 1)
+    // set midIdx
+    const col = n * 2 - 1
+    const midIdx = Math.floor((n * 2 - 1) / 2)
+    // if tier's length === col, meaning a tier in current row is complete
+        // so we console log tier
+        // time to move on to next row: call func with row + 1
+    if (tier.length === col) {
+        console.log(tier)
+        return pyramidPrac(n, row + 1)
+    }
+    // set 'add' variable
+    let add;
+    // if (midIdx - row) is smaller/equal to tier's length && (midIdx + row) is larger/equal to tier's length
+        // set add to '#'
+    // else, set add to ' '
+    if ((midIdx - row) <= tier.length && (midIdx + row) >= tier.length) {
+        add = '#'
+    } else {
+        add = ' '
+    }
+    // call func, concat add to tier
+    pyramidPrac(n, row, tier + add)
+
+}
