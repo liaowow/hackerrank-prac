@@ -28,3 +28,13 @@ function isVowel(char) {
     const vowels = ['a', 'e', 'i', 'o', 'u']
     return vowels.includes(char)
 }
+
+/* ALT SOLUTION -- using RegEx */
+function vowels2(str) {
+    /* RegEx tips:
+    g -> make sure we don't stop at the first match
+    i -> case insensitive
+    */
+    const matches = str.match(/[aeiou]/gi)
+    return matches ? matches.length : 0
+}
