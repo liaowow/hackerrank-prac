@@ -91,19 +91,21 @@ function pyramidPrac(n, row = 0, tier = '') {
     if (n === row) {
         return;
     }
-    // set col to (n * 2 - 1)
+    // set column to (n * 2 - 1)
     // set midIdx
-    const col = n * 2 - 1
+    const column = n * 2 - 1
     const midIdx = Math.floor((n * 2 - 1) / 2)
-    // if tier's length === col, meaning a tier in current row is complete
+    // if tier's length === column, meaning a tier in current row is complete
         // so we console log tier
         // time to move on to next row: call func with row + 1
-    if (tier.length === col) {
+    if (tier.length === column) {
         console.log(tier)
         return pyramidPrac(n, row + 1)
     }
     // set 'add' variable
     let add;
+    /* FIGURING OUT relationship b/t midIdx & current row & current string */
+    
     // if (midIdx - row) is smaller/equal to tier's length && (midIdx + row) is larger/equal to tier's length
         // set add to '#'
     // else, set add to ' '
