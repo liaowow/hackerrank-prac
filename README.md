@@ -6,6 +6,16 @@
 
 **Big O time** is the language and metric we use to describe the efficiency of algorithms.
 
+## Runtime Complexity
+
+Describes the performance of an algorithm. How much more processing power/time is required to run your algorithm if we increase the inputs?
+- O(1) | Constant Runtime
+-- no matter how many elements we're working with, the algo/operation will always take the same about of time
+- O(n) | Linear Runtime
+-- iterate through all elements in a collection of data. If you see a for loop spanning from `0` to `array.length`, you probably have 'n', or linear runtime.
+
+
+
 ## Hash Table
 
 `Hash Table` is a data structure that organizes data using `hash functions` in order to support **quick insertion** and **search**.
@@ -20,9 +30,9 @@ The key idea is to use a hash function to **map keys to buckets**:
 1. When we insert a new key, the hash function will decide which bucket the key should be assigned and the key will be stored in the corresponding bucket.
 2. When we want to search for a key, the hash table will use the **same** hash function to find the corresponding bucket and search only in the specific bucket.
 
-
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [Big O Explained on freeCodeCamp](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/)
 - [LeetCode Explore](https://leetcode.com/explore)
+- [Udemy Coding Interview Bootcamp](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)

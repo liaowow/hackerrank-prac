@@ -17,7 +17,7 @@
 
 function matrix(n) {
     // populate an array of n arrays
-    let result = Array(n).fill([])
+    const results = Array(n).fill([])
     let counter = 1
     let startCol = 0
     let endCol = n - 1
@@ -27,32 +27,32 @@ function matrix(n) {
     while (startCol <= endCol && startRow <= endRow) {
         // responsible for top row
         for (let i = startCol; i < endCol; i++) {
-            result[startRow][i] = counter
+            results[startRow][i] = counter
             counter++
         }
         startRow++
 
         // responsible for right col
         for (let i = startRow; i < endRow; i++) {
-            result[i][endCol] = counter
+            results[i][endCol] = counter
             counter++
         }
         endCol--
 
         // responsible for bottom row
         for (let i = endCol; i >= startCol; i--) {
-            result[endRow][i] = counter
+            results[endRow][i] = counter
             counter++
         }
         endRow--
         // responsible for left col
         for (let i = endRow; i >= startRow; i--) {
-            result[i][startCol] = counter
+            results[i][startCol] = counter
             counter++
         }
         startCol++
     }
-    return result
+    return results
 }
 
 /* SOLUTION#1 */
