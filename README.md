@@ -28,6 +28,21 @@ Describes the performance of an algorithm. How much more processing power/time i
 - O(2 ^ n) | **Exponential** Runtime
     - if you add a **single** element to the collection, the required processing power doubles. 
 
+### Identifying Runtime Complexity
+- Iterating with a simple for loop through a single collection?
+    - probably **O(n)**
+- Iterating through half a collection?
+    - Still **O(n)**. There are no constants in runtime.
+- Iterating through 2 *different* collections with separate for loops?
+    - **O(n + m)**
+- 2 nested for loops iterating over the same collection?
+    - **O(n ^ 2)**, or **O(n * n)**
+- 2 nested for loops iterating over 2 *different* collections?
+    - **O(n * m)**
+- Sorting?
+    - **O(n * log(n))**
+- Searching a sorted array?
+    - **O(log(n))**
 
 ## Hash Table
 
