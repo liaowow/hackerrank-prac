@@ -10,17 +10,24 @@
 
 Describes the performance of an algorithm. How much more processing power/time is required to run your algorithm if we increase the inputs?
 - O(1) | **Constant** Runtime
-    - no matter how many elements we're working with, the algo/operation will always take the same about of time
+    - no matter how many elements we're working with, the algo/operation will always take the same amount of time
+
 - O(n) | **Linear** Runtime
     - iterate through all elements in a collection of data. If you see a for loop spanning from `0` to `array.length`, you probably have 'n', or linear runtime.
+
 - O(log(n)) | **Logarithmic** Runtime
-    - you have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that **searching** operations are `log(n)`.
+    - you have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that **searching** operations are `log(n)`. 
+        - e.g. searching through a sorted array of data
+
 - O(n * log(n)) | **Quasilinear** Runtime
     - you have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that **sorting** operations are `log(n * log(n))`.
+
 - O(n ^ 2) | **Quadratic** Runtime
     - 'The handshake problem', where every element in the collection has to be compared to every other element.
+
 - O(2 ^ n) | **Exponential** Runtime
     - if you add a **single** element to the collection, the required processing power doubles. 
+
 
 ## Hash Table
 
