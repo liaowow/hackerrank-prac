@@ -24,3 +24,20 @@ function fib(n) {
     return arr[n]
 }
 
+/* SOLUTION#1 -- iterative, initiates array with first two elements */
+function fib1(n) {
+    const result = [0, 1]
+    
+    for (let i = 2; i <= n; i++) {
+        const a = result[i - 1]
+        const b = result[i - 2]
+        result.push(a + b)
+    }
+    
+    return result[n]
+}
+
+/* SOLUTION#2 -- recursive */
+function fib2(n) {
+    
+}
