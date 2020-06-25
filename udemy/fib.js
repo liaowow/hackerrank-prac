@@ -86,7 +86,7 @@ function memoize(fn) {
 
 }
 
-function fib(n) {
+function slowFib(n) {
     if (n < 2) {
         return n
     }
@@ -94,4 +94,4 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2)
 }
 
-fib = memoize(fib)
+fib = memoize(slowFib)

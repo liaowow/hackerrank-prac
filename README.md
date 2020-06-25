@@ -44,6 +44,14 @@ Describes the performance of an algorithm. How much more processing power/time i
 - Searching a sorted array?
     - **O(log(n))**
 
+## Data Structure
+
+Some way of organizing info/data in your program with optimal **runtime complexity** for adding or removing records.
+
+JavaScript natively implements several data structures.
+
+
+
 ## Hash Table
 
 `Hash Table` is a data structure that organizes data using `hash functions` in order to support **quick insertion** and **search**.
