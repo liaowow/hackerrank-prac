@@ -9,15 +9,28 @@ the elements can take, where n is the number of elements in the range.
 /* Example:
 const str = "abc"
 permutations(str)
-// abc
-// acb
-// bac
-// bca
-// cba
-// cab
+//=> ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 */
 
 function permutations(str) {
-    // Fill in this method
-    return str;
-  }
+    let arr = []
+    // base case: less than 2 characters in the string
+    if (str.length < 2) {
+        arr.push(str)
+        return arr
+    } 
+
+    for (let i = 0; i < str.length; i++) {
+        let currentChar = str[i]
+        let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length)
+        let remainingPermutation = permutations(remainingStr) // save the result of the recursive function
+
+        // if we find a repeating character, don't add it to the arr
+        if (str.indexOf(currentChar) !== i) {
+            continue
+        }
+        // concat currentChar with each substring and push to the arr
+        remainingPermutation.forEach(subString => arr.push(currentChar + subString))
+    }
+    return arr
+}
