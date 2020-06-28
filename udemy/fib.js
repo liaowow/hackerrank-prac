@@ -57,16 +57,18 @@ return the precomputed results (instead of running the funciton again).
 
 // create a memoizer to speed up fib function
 function memoize(fn) {
-    // key is argument we are passing in slowFib fn
-    // value is result of the function call
+    // create cache for quick lookup:
+        // key is argument we are passing in slowFib fn
+        // value is result of the function call
     const cache = {}
 
     // if only 1 arg
     return function(x) {
+        // caching mechanism -- this function is already cached
         if (cache[x]) {
             return cache[x]
         }
-
+        // if not cached, save the result of the fn and cache it
         const result = fn(x)
         cache[x] = result
         return result
