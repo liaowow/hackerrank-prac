@@ -43,7 +43,6 @@ function weave(sourceOne, sourceTwo) {
     //     sourceOne.peek() === 'undefined' ? i + 1 : result.add(sourceOne.remove()) 
     //     sourceTwo.peek() === 'undefined' ? i + 1 : result.add(sourceTwo.remove()) 
     // }
-    
     return result
 }
 
