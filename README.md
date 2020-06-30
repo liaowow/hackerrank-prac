@@ -50,7 +50,29 @@ Some way of organizing info/data in your program with optimal **runtime complexi
 
 JavaScript natively implements several data structures.
 
+### Node: An individual part of a larger data structure
 
+Nodes are a basic data structure which contain data and one or more links to other nodes. Nodes can be used to represent a `tree structure` or a `linked list`. In such structures where nodes are used, it is possible to traverse from one node to another node.
+
+### Linked List
+
+A linked list is a `linear` data structure where elements are not stored at contiguous location. Instead the elements are linked using pointers.
+
+In a linked list, data is stored in nodes and each node is linked to the next and, optionally, to the previous. 
+
+Each node in a list consists of the following parts: 
+1) data 
+2) A pointer (Or reference) to the next node 
+3) Optionally, a pointer to the previous node
+
+### Queue
+
+A queue is a data structure which contains an ordered set of data. Queues are a First In, First Out or `FIFO` structure.
+
+Queues provide three methods for interaction:
+- `Enqueue`: adds data to the “back” or end of the queue
+- `Dequeue`: provides and removes data from the “front” or beginning of the queue
+- `Peek`: reveals data from the “front” of the queue without removing it
 
 ## Hash Table
 
