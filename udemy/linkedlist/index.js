@@ -157,6 +157,46 @@ class LinkedList {
     
     // prevNode.next = nextNode
   }
+
+  insertAt(data, idx) {
+    /* tutorial */
+    // case 1: when the list is empty
+    if (!this.head) {
+        this.head = new Node(data)
+        return
+    }
+    // case 2: when inserting at idx 0
+    if (idx === 0) {
+        this.head = new Node(data, this.head)
+        return
+    }
+    // case 3: when inserting at middle idx
+    let prevNode = this.getAt(idx - 1)
+    // case 4: when idx is out of bounds, prevNode would be null, so assign it as the last node
+    if (!prevNode) {
+        prevNode = this.getLast()
+    }
+    /* refactoring line 174~178:
+    const prevNode = this.getAt(idx - 1) || this.getLast()
+     */
+    // create a new node whose next node is prevNode's next node
+    const newNode = new Node(data, prevNode.next)
+    prevNode.next = newNode
+
+    /* my solution: did not pass 1 case (out-of-bounds index) */
+    // let newNode = new Node(data)
+    // let currentNode = this.getAt(idx)
+    // let prevNode = this.getAt(idx - 1)
+
+    // if (idx === 0 || !this.head || !prevNode) {
+    //     newNode.next = this.head
+    //     this.head = newNode
+    //     return
+    // }
+
+    // prevNode.next = newNode
+    // newNode.next = currentNode
+  }
 }
 
 module.exports = { Node, LinkedList };
