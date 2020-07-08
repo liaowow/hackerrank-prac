@@ -159,6 +159,20 @@ class LinkedList {
   }
 
   insertAt(data, idx) {
+    /* my solution: did not pass 1 case (out-of-bounds index) */
+    // let newNode = new Node(data)
+    // let currentNode = this.getAt(idx)
+    // let prevNode = this.getAt(idx - 1)
+
+    // if (idx === 0 || !this.head || !prevNode) {
+    //     newNode.next = this.head
+    //     this.head = newNode
+    //     return
+    // }
+
+    // prevNode.next = newNode
+    // newNode.next = currentNode
+    
     /* tutorial */
     // case 1: when the list is empty
     if (!this.head) {
@@ -182,20 +196,6 @@ class LinkedList {
     // create a new node whose next node is prevNode's next node
     const newNode = new Node(data, prevNode.next)
     prevNode.next = newNode
-
-    /* my solution: did not pass 1 case (out-of-bounds index) */
-    // let newNode = new Node(data)
-    // let currentNode = this.getAt(idx)
-    // let prevNode = this.getAt(idx - 1)
-
-    // if (idx === 0 || !this.head || !prevNode) {
-    //     newNode.next = this.head
-    //     this.head = newNode
-    //     return
-    // }
-
-    // prevNode.next = newNode
-    // newNode.next = currentNode
   }
 
   forEach(fn) {
