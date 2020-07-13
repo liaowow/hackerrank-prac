@@ -40,4 +40,13 @@ class Tree {
       fn(node) // pass in the element and run the fn
     }
   }
+
+  traverseDF(fn) {
+    const arr = [this.root]
+    while (arr.length) {
+      const node = arr.shift()
+      fn(node)
+      arr.unshift(...node.children)
+    }
+  }
 }
