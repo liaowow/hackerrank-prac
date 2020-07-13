@@ -26,4 +26,18 @@ class Node {
 
 }
 
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null
+  }
+
+  traverseBF(fn) {
+    const arr = [this.root] // pass in root element, turn it into an array
+    // as long as there's an element in the arr...
+    while (arr.length) {
+      const node = arr.shift() // take out 1st element of the arr
+      arr.push(...node.children) // take every element inside node's children and push them onto arr
+      fn(node) // pass in the element and run the fn
+    }
+  }
+}
