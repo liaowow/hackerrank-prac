@@ -19,8 +19,8 @@ function levelWidth(root) {
     const node = arr.shift()
 
     if (node === 'stopper') {
-      counters.push(0)
       arr.push('stopper')
+      counters.push(0)
     } else {
       arr.push(...node.children)
       counters[counters.length - 1]++
