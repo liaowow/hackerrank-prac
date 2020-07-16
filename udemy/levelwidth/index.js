@@ -16,13 +16,18 @@ function levelWidth(root) {
   let arr = [root, 'stopper']
 
   while (arr.length > 1) {
+    // take out the first element in the array
     const node = arr.shift()
-
+    // check if it's the stopper
     if (node === 'stopper') {
+      // if so, put stopper back at the end of arr
       arr.push('stopper')
+      // add another element in the counters, meaning we've started another width
       counters.push(0)
     } else {
+      // if not, add the node's children to the end of arr
       arr.push(...node.children)
+      // increment counter element at that width
       counters[counters.length - 1]++
     }
 
