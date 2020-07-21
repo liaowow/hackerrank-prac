@@ -36,7 +36,18 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
+  // base case: there's nothing to split
+  if (arr.length === 1) {
+    return arr
+  }
+  // recursive: split arr, and pass the split ones back into mergeSort()
 
+  // determine center point, left half, and right half
+  const center = Math.floor(arr.length / 2)
+  const left = arr.slice(0, center)
+  const right = arr.slice(center)
+
+  return merge(mergeSort(left), mergeSort(right))
 }
 
 function merge(left, right) {
