@@ -6,7 +6,7 @@ ex:
 [2, 1, 5] target = 4 --> threshold = 1.5
 (array will be [1, 1.5, 1.5] because 1 + 1.5 + 1.5 = 4)
 
-
+hint:
 val = (target - currentSum) / numOfRemainingElements
 array[i + 1]
 if (array[i+1] > target - currentSum) return val
