@@ -34,3 +34,30 @@ function permutations(str) {
     }
     return arr
 }
+
+function permuteNoRecursion(str) {
+    let charsArr = str.split('')
+    let results = [charsArr.shift()]
+
+    while (charsArr.length) {
+        let currChar = charsArr.shift()
+        let tempResults = []
+
+        results.forEach(innerCharArr => {
+            let currIdx = 0
+            while (currIdx <= innerCharArr.length) {
+                let arrCopy = [...innerCharArr]
+                arrCopy.splice(currIdx, 0, currChar)
+                tempResults.push(arrCopy)
+                currIdx++
+            }
+        })
+
+        results = tempResults
+    }
+
+    return results
+            .map(subStrArr => subStrArr.join(''))
+            .filter((str, idx, arr) => arr.indexOf(str) === idx)
+            .sort()
+}
