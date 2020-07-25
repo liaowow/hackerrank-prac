@@ -52,7 +52,7 @@ function solutionScore(A) {
   A = A.filter(num => num >= 1).sort((a, b) => a - b)
   let result = 1
   for (let i = 0; i < A.length; i++) {
-    // if the value is bigger than 1, 1 is the smallest, so no need to continue
+    // if the current value is bigger than current result, then current result is the missing integer (smallest positive integer that does not occur in A)
     if (result < A[i]) {
       return result
     }
