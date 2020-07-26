@@ -74,6 +74,15 @@ Queues provide three methods for interaction:
 - `Dequeue`: provides and removes data from the “front” or beginning of the queue
 - `Peek`: reveals data from the “front” of the queue without removing it
 
+### Stack
+
+A stack is a data structure that follows a Last In, First Out (`LIFO`) protocol. Every stack has a size that determines how many nodes it can accomodate.
+
+The stack data structure has three main methods: 
+- `push()`: adds a node to the top of the stack
+- `pop()`: removes a node from the top of the stack
+- `peek()`: returns the value of the top node without removing it from the stack
+
 ## Hash Table
 
 `Hash Table` is a data structure that organizes data using `hash functions` in order to support **quick insertion** and **search**.
@@ -94,3 +103,4 @@ The key idea is to use a hash function to **map keys to buckets**:
 - [Big O Explained on freeCodeCamp](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/)
 - [LeetCode Explore](https://leetcode.com/explore)
 - [Udemy Coding Interview Bootcamp](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
+- [Codecademy: Pass the Technical Interview with JavaScript](https://www.codecademy.com/learn/paths/pass-the-technical-interview-with-javascript/)
