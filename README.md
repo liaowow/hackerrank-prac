@@ -67,7 +67,7 @@ Each node in a list consists of the following parts:
 
 ### Queue
 
-A queue is a data structure which contains an ordered set of data. Queues are a First In, First Out or `FIFO` structure.
+A queue is a `linear` data structure which contains an ordered set of data. Queues are a First In, First Out or `FIFO` structure.
 
 Queues provide three methods for interaction:
 - `Enqueue`: adds data to the “back” or end of the queue
@@ -76,26 +76,47 @@ Queues provide three methods for interaction:
 
 ### Stack
 
-A stack is a data structure that follows a Last In, First Out (`LIFO`) protocol. Every stack has a size that determines how many nodes it can accomodate.
+A stack is a `linear` data structure that follows a Last In, First Out (`LIFO`) protocol. Every stack has a size that determines how many nodes it can accomodate.
 
 The stack data structure has three main methods: 
 - `push()`: adds a node to the top of the stack
 - `pop()`: removes a node from the top of the stack
 - `peek()`: returns the value of the top node without removing it from the stack
 
-## Hash Table
+### Hash Table
 
 `Hash Table` is a data structure that organizes data using `hash functions` in order to support **quick insertion** and **search**.
 
-There are 2 kinds of hash tables:
-1. Hash set: one of the implementations of a `set` data structure to store `no repeated values`.
+There are two kinds of hash tables:
+1. Hash set: one of the implementations of a `set` data structure to store **no repeated** values.
 2. Hash map: one of the implementations of a `map` data structure to store `(key, value)` pairs.
+    - Built on top of an array using a special indexing system.
+    - A key-value storage with fast assignments and lookup.
+    - A table that represents a map from a set of keys to a set of values.
 
-### Principle of Hash Table
+#### Principle of Hash Table
 
 The key idea is to use a hash function to **map keys to buckets**:
-1. When we insert a new key, the hash function will decide which bucket the key should be assigned and the key will be stored in the corresponding bucket.
+1. When we insert a new key, the hash function will decide which bucket the key should be assigned and the key will be stored in the corresponding bucket, i.e. **hash bucket**.
 2. When we want to search for a key, the hash table will use the **same** hash function to find the corresponding bucket and search only in the specific bucket.
+
+#### Hash Functions
+
+A hash function takes a string (or some other type of data) as input and returns an array index as output.
+
+In order for our hash map implementation to guarantee that it returns an index that fits into the underlying array, the hash function will first compute a value using some scoring metric: this is the hash value, hash code, or just the hash. Our hash map implementation then takes that hash value **mod (%)** the size of the array.
+
+This guarantees that the value returned by the hash function can be used as an index into the array we’re using.
+
+Therefore, hash functions greatly reduce any possible inputs (any string you can imagine) into a much smaller range of potential outputs (an integer smaller than the size of our array). For this reason hash functions are also known as **compression functions**.
+
+Also, because of the compression, hashing is *not* a reversible process. With just a hash value it is impossible to know for sure the key that was plugged into the hashing function.
+
+#### Resolving Hash Collisions
+
+A hash collision occurs when our hash function produces the same hash for two different keys. There are several strategies for resolving collisions:
+- Separate chaining: updating the underlying data structure. Instead of an array of values that are mapped to by hashes, it could be an array of linked lists.
+- Open addressing: sticking to the array as our underlying data structure, but continue looking for (**probing**) a new index to save our data if the first result of our hash function has a different key’s data.
 
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
