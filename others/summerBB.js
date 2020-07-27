@@ -11,6 +11,9 @@ val = (target - currentSum) / numOfRemainingElements
 array[i + 1]
 if (array[i+1] > target - currentSum) return val
 */
+function findThreshold(arr, target) {
+
+}
 
 /* Q2: 
 Given a string, output an array string(s) that are most nested in parenthesis.
@@ -18,8 +21,14 @@ ex:
 "ab(c(d)e)f" ---> ["d"]
 "ab(c(d))e(f(g))" ---> ["d", "g"]
 */
+function nestedStrings(str) {
+  
+}
 
 /* Q3:
 Simulate a dice roll and check its validity against a certain percent.
 For a 6 sided die, rolled 600 times, validate that there is an even distribution within a 10% range, returning "true" or "false"
 */
+function diceRoll() {
+  
+}

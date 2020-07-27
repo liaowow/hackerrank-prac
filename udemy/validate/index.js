@@ -27,4 +27,26 @@ function validate(node, min = null, max = null) {
   return true
 }
 
+/* from leetcode */
+var isValidBST = function(root) {   
+
+  return helper(root, null, null);
+};
+
+
+function helper(root, min, max) {
+
+  if (!root) {
+      return true; // We hit the end of the path
+  }
+
+  if ((min !== null && root.val <= min) || (max !== null && root.val >= max)) {
+      return false; // current node's val doesn't satisfy the BST rules
+    }
+
+  // Continue to scan left and right
+    return helper(root.left, min, root.val) && helper(root.right, root.val, max);
+
+};
+
 module.exports = validate;
