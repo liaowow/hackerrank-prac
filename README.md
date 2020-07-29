@@ -88,11 +88,12 @@ The stack data structure has three main methods:
 `Hash Table` is a data structure that organizes data using `hash functions` in order to support **quick insertion** and **search**.
 
 There are two kinds of hash tables:
-1. Hash set: one of the implementations of a `set` data structure to store **no repeated** values.
-2. Hash map: one of the implementations of a `map` data structure to store `(key, value)` pairs.
-    - Built on top of an array using a special indexing system.
+1. HashSet: one of the implementations of a `set` data structure to store **no repeated** values.
+2. HashMap: one of the implementations of a `map` data structure to store `(key, value)` pairs.
+    - Built on top of an **array** using a special **indexin**g system.
     - A key-value storage with fast assignments and lookup.
     - A table that represents a map from a set of keys to a set of values.
+    - Each Hash Map key can be paired with only one value. However, different keys can be paired with the same value.
 
 #### Principle of Hash Table
 
