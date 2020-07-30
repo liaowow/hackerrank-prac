@@ -105,6 +105,8 @@ The key idea is to use a hash function to **map keys to buckets**:
 
 A hash function takes a string (or some other type of data) as input and returns an array index as output.
 
+It is said to be **deterministic**. That means the hashing function must always return the same index when given the same key.
+
 In order for our hash map implementation to guarantee that it returns an index that fits into the underlying array, the hash function will first compute a value using some scoring metric: this is the hash value, hash code, or just the hash. Our hash map implementation then takes that hash value **mod (%)** the size of the array.
 
 This guarantees that the value returned by the hash function can be used as an index into the array we’re using.
