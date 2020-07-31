@@ -1,5 +1,4 @@
 function soldiers(ranks) {
-  // write your code in JavaScript (Node.js 8.9.4)
   let result = 0
   let sortedArr = ranks.sort((a, b) => a - b)
   let map = {}
@@ -9,11 +8,9 @@ function soldiers(ranks) {
           map[num] = num + 1
       }
       
-      if (num === map[num - 1] && sortedArr.includes(map[num - 1])) {
-          result++
-          console.log(result)
+      if ((num + 1) === map[num] && sortedArr.includes(map[num])) {
+        result++
       }
-      console.log(map)
   })
   
   
