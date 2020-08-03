@@ -84,7 +84,7 @@ meanGroups([[3, 3, 4, 2],
    [3, 3, 3]])
 
 
-   function alternatingSort(a) {
+function alternatingSort(a) {
     // create newArr
     let newArr = []
     for (let i = 0; i < a.length; i++) {
@@ -105,14 +105,10 @@ meanGroups([[3, 3, 4, 2],
         newArr.push(curr)
         newArr.push(last)
     }
-
-    console.log(newArr)
     
     // check if newArr is asc   
     for (let j = 1; j < newArr.length; j++) {
         if (newArr[j] < newArr[j - 1]) {
-          console.log('curr: ', newArr[j])
-          console.log('before: ', newArr[j - 1])
             return false
         }
     }
