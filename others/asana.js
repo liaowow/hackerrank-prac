@@ -1,6 +1,10 @@
 function mutateTheArray(n, a) {
   let newArr = []
   
+  if (a.length === 1) {
+      return a
+  }
+
   for (let i = 0; i < n; i++) {
       let newNum = a[i - 1] + a[i] + a[i + 1]
       if (i === 0) {
@@ -78,3 +82,74 @@ meanGroups([[3, 3, 4, 2],
    [4, 0, 3, 3],
    [2, 3],
    [3, 3, 3]])
+
+
+   function alternatingSort(a) {
+    // create newArr
+    let newArr = []
+    for (let i = 0; i < a.length; i++) {
+        let mid = Math.floor(a.length / 2)
+        let curr = a[i]
+        let last = a[a.length - i - 1]
+
+        if (a.length % 2 === 0) {
+          if (i === mid) {
+            break
+          }
+        } else {
+            if (i === (mid + 1)) {
+              break
+            }
+        }
+
+        newArr.push(curr)
+        newArr.push(last)
+    }
+
+    console.log(newArr)
+    
+    // check if newArr is asc   
+    for (let j = 1; j < newArr.length; j++) {
+        if (newArr[j] < newArr[j - 1]) {
+          console.log('curr: ', newArr[j])
+          console.log('before: ', newArr[j - 1])
+            return false
+        }
+    }
+    return true
+}
+
+// alternatingSort([1, 3, 5, 6, 4, 2]) 
+// -> true
+// alternatingSort([1, 4, 5, 6, 3]) 
+// -> false
+
+function concatenationsSum(a) {
+  let strArr = []
+  let sumArr = []
+  let map = {}
+  // stringify value
+  for (let val of a) {
+      let stringify = val.toString()
+      strArr.push(stringify)
+  }
+  
+  for (let i = 0; i < strArr.length; i++) {
+      // concat itself
+      let concatSelf = Number(strArr[i] + strArr[i])
+      sumArr.push(concatSelf)
+      // concat others
+      for (let j = (i + 1); j < strArr.length; j++) {
+          let concatOthers = Number(strArr[i] + strArr[j])
+          sumArr.push(concatOthers)
+      }
+  }
+  console.log(sumArr)
+  let result = sumArr.reduce((total, curr) => total + curr)
+  return result
+}
+
+concatenationsSum([10, 2]) 
+// // => 1344
+// concatenationsSum([8]) 
+// => 88
