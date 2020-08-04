@@ -26,14 +26,14 @@ function matrix(n) {
 
     while (startCol <= endCol && startRow <= endRow) {
         // responsible for top row
-        for (let i = startCol; i < endCol; i++) {
+        for (let i = startCol; i <= endCol; i++) {
             results[startRow][i] = counter
             counter++
         }
         startRow++
 
         // responsible for right col
-        for (let i = startRow; i < endRow; i++) {
+        for (let i = startRow; i <= endRow; i++) {
             results[i][endCol] = counter
             counter++
         }

@@ -84,6 +84,7 @@ meanGroups([[3, 3, 4, 2],
    [3, 3, 3]])
 
 
+/* my initial solution: pass some */
 function alternatingSort(a) {
     // create newArr
     let newArr = []
@@ -120,6 +121,9 @@ function alternatingSort(a) {
 // alternatingSort([1, 4, 5, 6, 3]) 
 // -> false
 
+
+
+/* my initial solution: did not pass */
 function concatenationsSum(a) {
   let strArr = []
   let sumArr = []
@@ -149,3 +153,15 @@ concatenationsSum([10, 2])
 // // => 1344
 // concatenationsSum([8]) 
 // => 88
+
+/* alt solution */
+function concatenationsSum1(a) {
+  let sum = 0
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < a.length; j++) {
+      let concat = a[i].toString() + a[j].toString()
+      sum += Number(concat)
+    }
+  }
+  return sum
+}
