@@ -2,9 +2,15 @@
 
 **Algorithm**: A set of instructions for accomplishing a task.
 
+**Asymptotic Notation** describes the runtime of a program. The three types of asymptotic notation are:
+- big Theta(Θ): describes the runtime if the runtime of the program is the **same in every case** 
+- big Omega(Ω): describes the **best-case** running time of a program
+- big O(O): describes the **worst-case** running time of a program 
+
 **Big O notation**: A theoretical measurement of the *time* and *space* complexity of your algorithm/data sturcture. It's a convenient way to describe how fast a function is growing (reference [here](https://yourbasic.org/algorithms/big-o-notation-explained/)).
 
 **Big O time** is the language and metric we use to describe the efficiency of algorithms.
+
 
 ## Runtime Complexity
 
@@ -35,13 +41,13 @@ Describes the performance of an algorithm. How much more processing power/time i
 - O(2 ^ n) | **Exponential** Runtime
     - if you add a **single** element to the collection, the required processing power doubles. 
         - e.g. Fibonacci  
-        - e.g. travelling salesman problem using dyanmic programming      
+        - e.g. traveling salesperson problem using *dyanmic programming*      
         - e.g. [Power Set](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/#Power-Set): finding all the subsets on a set
 
 - O(n!) | **Factorial** Runtime
-    - Multiplication of all positive integer numbers less than itself. 
+    - multiplication of all positive integer numbers less than itself. 
         - e.g. permutations of a string
-        - e.g. solving the traveling salesman problem with a brute-force search
+        - e.g. solving the traveling salesperson problem with a *brute-force search*
 
 ### Identifying Runtime Complexity
 - Iterating with a simple for loop through a single collection?
