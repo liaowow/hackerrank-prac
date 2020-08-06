@@ -140,7 +140,9 @@ Also, because of the compression, hashing is *not* a reversible process. With ju
 
 A hash collision occurs when our hash function produces the same hash for two different keys. There are several strategies for resolving collisions:
 - Separate chaining: updating the underlying data structure. Instead of an array of values that are mapped to by hashes, it could be an array of linked lists.
+    - The big O runtime of separate chaining is **O(n)**: The worst case would be that all elements in the hash map hashed to the same index and are in one linked list with the element you’re looking for at the end of the list. To find it, you would have to iterate through the list.
 - Open addressing: sticking to the array as our underlying data structure, but continue looking for (**probing**) a new index to save our data if the first result of our hash function has a different key’s data.
+    - The big O runtime of open addressing is also **O(n)**: When retrieving an element from a hash map that uses linear probing, the worst case would be if the element hashes to the first index, but is actually at the last index. You would then have to search through the entire array.
 
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
