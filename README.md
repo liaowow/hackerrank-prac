@@ -11,19 +11,26 @@
 Describes the performance of an algorithm. How much more processing power/time is required to run your algorithm if we increase the inputs?
 - O(1) | **Constant** Runtime
     - no matter how many elements we're working with, the algo/operation will always take the same amount of time
+        - e.g. array lookup, hash table insertion
 
 - O(n) | **Linear** Runtime
     - iterate through all elements in a collection of data. If you see a for loop spanning from `0` to `array.length`, you probably have 'n', or linear runtime.
+        - e.g. a for-loop; printing the elements in an array
 
 - O(log(n)) | **Logarithmic** Runtime
     - you have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that **searching** operations are `log(n)`. 
+        - e.g. binary search
         - e.g. searching through a sorted array of data
+        - e.g. find somebody in a telephone directory that has one million names listed
 
 - O(n * log(n)) | **Quasilinear** Runtime
     - you have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that **sorting** operations are `log(n * log(n))`.
 
 - O(n ^ 2) | **Quadratic** Runtime
     - 'The handshake problem', where every element in the collection has to be compared to every other element.
+        - e.g. nested for-loops
+        - e.g. a bubble sort
+        - e.g. comparing 2 integer lists against each other
 
 - O(2 ^ n) | **Exponential** Runtime
     - if you add a **single** element to the collection, the required processing power doubles. 
@@ -128,3 +135,4 @@ A hash collision occurs when our hash function produces the same hash for two di
 - [LeetCode Explore](https://leetcode.com/explore)
 - [Udemy Coding Interview Bootcamp](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
 - [Codecademy: Pass the Technical Interview with JavaScript](https://www.codecademy.com/learn/paths/pass-the-technical-interview-with-javascript/)
+- [Time Complexity Analysis in JavaScript](https://www.jenniferbland.com/time-complexity-analysis-in-javascript/)
