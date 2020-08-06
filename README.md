@@ -34,6 +34,14 @@ Describes the performance of an algorithm. How much more processing power/time i
 
 - O(2 ^ n) | **Exponential** Runtime
     - if you add a **single** element to the collection, the required processing power doubles. 
+        - e.g. Fibonacci  
+        - e.g. travelling salesman problem using dyanmic programming      
+        - e.g. [Power Set](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/#Power-Set): finding all the subsets on a set
+
+- O(n!) | **Factorial** Runtime
+    - Multiplication of all positive integer numbers less than itself. 
+        - e.g. permutations of a string
+        - e.g. solving the traveling salesman problem with a brute-force search
 
 ### Identifying Runtime Complexity
 - Iterating with a simple for loop through a single collection?
