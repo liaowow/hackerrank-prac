@@ -23,7 +23,7 @@ function reverseString2(str) {
 function reverseString3(str) {
     /* substr() method returns the characters in a string beginning at the specified location through the specified number of characters. */
     /* charAt() method returns the specified character from a string. */
-    return (str === "") ? "" : reverseString3(str.substr(1) + str.charAt(0))
+    return (str === "") ? "" : reverseString3(str.substr(1)) + str.charAt(0)
 }
 
 // Solution#4 -- using reduce, condensing each char down to a single string value
