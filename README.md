@@ -144,6 +144,32 @@ A hash collision occurs when our hash function produces the same hash for two di
 - Open addressing: sticking to the array as our underlying data structure, but continue looking for (**probing**) a new index to save our data if the first result of our hash function has a different key’s data.
     - The big O runtime of open addressing is also **O(n)**: When retrieving an element from a hash map that uses linear probing, the worst case would be if the element hashes to the first index, but is actually at the last index. You would then have to search through the entire array.
 
+
+### Trees
+
+Trees are a nonlinear data structure composed of nodes used for storing hierarchical data.
+
+Each tree node typically stores a value and references to its child nodes.
+
+There are two ways to describe the shape of a tree:
+- Trees can be `wide`, meaning that each node has many children
+- Trees can be `deep`, meaning that there are many parent-child connections with few siblings per node. 
+Trees can be both wide and deep at the same time.
+
+#### Node Root
+
+In a tree data structure, the node that is not the child of any other node is called the `root` of the tree. 
+
+A tree can only have one root.
+
+#### Binary Search Tree
+
+A binary search tree requires that the values stored by the left child are **less** than the value of the parent, and the values stored by the right child are **greater** than that of the parent.
+
+##### Binary Search
+
+Binary search performs the search for the target within a **sorted** array. Hence, to run a binary search on a dataset, it must be sorted prior to performing it.
+
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
