@@ -166,9 +166,43 @@ A tree can only have one root.
 
 A binary search tree requires that the values stored by the left child are **less** than the value of the parent, and the values stored by the right child are **greater** than that of the parent.
 
-##### Binary Search
-
 Binary search performs the search for the target within a **sorted** array. Hence, to run a binary search on a dataset, it must be sorted prior to performing it.
+
+Time complexity: `O(log(n))`
+
+Implementation: Recursive
+```js
+function binarySearchRecursive(array, first, last, target) {
+  let mid = (first + last) / 2
+  // Base case: when we reach the last element
+  if (first === last) {
+      return null
+  }
+  
+  if (target < array[mid]) {
+    return binarySearchRecursive(array, first, mid, target);  
+  } else {
+    return binarySearchRecursive(array, mid, last, target);
+  }
+}
+```
+
+Implementation: Iterative
+```js
+function binSearchIterative(target, array, left, right) {
+  while(left < right) {
+    let mid = (right + left) / 2
+    if (target < array[mid]) {
+      right = mid
+    } else if (target > array[mid]) {
+      left = mid
+    } else {
+      return mid
+    }
+  }
+  return -1
+}
+```
 
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
