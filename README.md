@@ -204,6 +204,72 @@ function binSearchIterative(target, array, left, right) {
 }
 ```
 
+### Sorting Algorithms
+
+#### Bubble Sort
+
+Bubble sort is an introductory sorting algorithm that iterates through a list and compares **pairings** of adjacent elements.
+
+For implementation, bubble sort takes an array of elements, and reorders the elements of the input from smallest to largest by comparing a pair of neighboring elements and swapping their positions in the array, so that the larger of the two elements is always on the right.
+
+We implement the algorithm with two loops:
+1. The first loop iterates as long as the list is unsorted and we assume it’s unsorted to start
+2. Within this loop, another iteration moves through the list to check if the first element is larger than the second element
+
+The algorithm only stops when there are no more values that need to be swapped.
+
+It has a runtime of `O(n ^ 2)`.
+
+#### Merge Sort
+
+Merge Sort is the strategy that breaks the list-to-be-sorted into smaller parts, sometimes called a **divide-and-conquer** algorithm.
+
+In a divide-and-conquer algorithm, the data is continually broken down into smaller elements until sorting them becomes really simple.
+
+Merge sorting takes two steps: 
+1. Splitting the data into **“runs”** or smaller components 
+2. Re-combining those runs into sorted lists (the **“merge”**).
+
+Merge sort was unique for its time in that the best, worst, and average time complexity are all the same: `Θ(n * log(n))`.
+
+Merge sort also requires space. Each separation requires a temporary array, and so a merge sort would require enough space to save the whole of the input a second time. This means the worst-case **space** complexity of merge sort is `O(n)`.
+
+Some sorts attempt to improve upon the merge sort by first inspecting the input and looking for “runs” that are already pre-sorted. 
+
+[Timsort](https://en.wikipedia.org/wiki/Timsort) is one such algorithm that attempts to use pre-sorted data in a list to the sorting algorithm’s advantage. If the data is already sorted, Timsort runs in `Θ(n)` time.
+
+JS 2-step implementations:
+1. *Splitting the input array* – The algorithm recursively splits the input array until each element is in its own array. 
+2. *Merging sorted arrays* – The algorithm compares and combines the elements of arrays until the input array is sorted.
+
+#### Quicksort
+
+Quicksort is an efficient recursive algorithm for sorting arrays or lists of values. The algorithm is a **comparison sort**, where values are ordered by a comparison operation such as > or <.
+
+Quicksort uses a **divide and conquer** strategy, breaking the problem into smaller sub-problems until the solution is so clear there’s nothing to solve.
+
+We choose a single *pivot* element from the list. Every other element is compared with the pivot, which partitions the array into three groups:
+- A sub-array of elements **smaller than** the pivot.
+- The pivot itself.
+- A sub-array of elements **greater than** the pivot.
+
+Elements in the “smaller than” group are **never** compared with elements in the “greater than” group.
+
+Like merge sort, the input array is partitioned into smaller parts and then combined after the elements have been rearranged. 
+
+Unlike merge sort, which requires additional memory for auxiliary arrays, quicksort is space-saving because it deploys **in-place sorting**.
+
+Quicksort is an unusual algorithm in that the worst case runtime is O(n^2), but the average case is the same as merge sort: O(n * log(n)).
+
+We typically only discuss the worst case when talking about an algorithm’s runtime, but for Quicksort it’s so uncommon that we generally refer to it as `O(n * log(n))`.
+
+Like bubble sort, quicksort has a worst case runtime of O(n^2). This can happen when quicksort’s input data set comprises:
+- pre-sorted numbers,
+- backward-sorted numbers, or
+- all similar elements along with a poorly chosen pivot element that produces a partition of zero or one element.
+
+
+
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
