@@ -268,6 +268,41 @@ Like bubble sort, quicksort has a worst case runtime of O(n^2). This can happen 
 - backward-sorted numbers, or
 - all similar elements along with a poorly chosen pivot element that produces a partition of zero or one element.
 
+### Graphs
+
+Graphs are the perfect data structure for modeling networks. 
+
+They’re composed of **nodes**, or **vertices**, which hold data, and **edges**, which are a connection between two vertices.
+
+Some key terms:
+- `vertex`: A node in a graph.
+- `edge`: A connection between two vertices.
+- `adjacent`: When an edge exists between vertices.
+- `path`: A sequence of one or more edges between vertices.
+- `disconnected`: Graph where at least two vertices have no path connecting them.
+- `weighted`: Graph where edges have an associated cost.
+- `directed`: Graph where travel between vertices can be restricted to a single direction.
+- `cycle`: A path which begins and ends at the same vertex.
+- `adjacency matrix`: Graph representation where vertices are both the rows and the columns. Each cell represents a possible edge.
+- `adjacency list`: Graph representation where each vertex has a list of all the vertices it shares an edge with.
+
+#### Depth-First Graph Search
+
+It continues down a path until it reaches the end. It is helpful for determining if a path exists between two vertices. 
+
+DFS has many applications, including topological sorting and detecting cycles, but one of the more interesting real-world applications is that it can be used to solve problems that have a **singular correct answer** (a path between the start state and end state), such as a sudoku exercise.
+
+#### Breadth-First Graph Search
+
+It checks the values of all neighboring vertices before moving into another level of depth.
+
+This is an incredibly inefficient way to find just any path between two vertices, but it’s an excellent way to identify the **shortest path** between them. Because of this, BFS is helpful for figuring out directions from one place to another.
+
+#### Dijkstra’s Algorithm
+
+A method for finding the shortest distance from a given point to every other point in a **weighted** graph.
+
+The algorithm works by keeping track of all the distances and updating the distances as it conducts a **breadth-first** search. A common application of this algorithm is to find the quickest route from one destination to another.
 
 
 ## Resource

@@ -45,10 +45,11 @@ function rotLeft(arr, d) {
     ***/
 }
 
-/* SOLUTION#1 -- using .splice() */
+/* SOLUTION#1 -- using modulus && .splice() */
 function rotateLeft(array, n) {
     n = n % array.length
-    return array.push(...array.splice(0, n))
+    array.push(...array.splice(0, n))
+    return array
   }
 
 /* SOLUTION#2 -- O(n) */
