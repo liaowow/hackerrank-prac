@@ -288,7 +288,7 @@ Some key terms:
 
 #### Depth-First Graph Search
 
-It continues down a path until it reaches the end. It is helpful for determining if a path exists between two vertices. 
+It continues down a path until it reaches the end. Employing either **recursion** or a **stack** data structure, it is helpful for determining if a path exists between two vertices. 
 
 DFS has many applications, including topological sorting and detecting cycles, but one of the more interesting real-world applications is that it can be used to solve problems that have a **singular correct answer** (a path between the start state and end state), such as a sudoku exercise.
 
@@ -297,6 +297,15 @@ DFS has many applications, including topological sorting and detecting cycles, b
 It checks the values of all neighboring vertices before moving into another level of depth.
 
 This is an incredibly inefficient way to find just any path between two vertices, but it’s an excellent way to identify the **shortest path** between them. Because of this, BFS is helpful for figuring out directions from one place to another.
+
+#### Graph Search Traversal Order
+
+There are three main traversal orders that you’ll come across for graph traversal:
+1. **Preorder**: each vertex is added to the “visited” list and added to the output list BEFORE getting added to the stack
+2. **Postorder**: each vertex is added to the “visited” list and added to the output list AFTER it is popped off the stack
+3. **Reverse Post-Order** (also known as **Topological Sort**), which returns an output list that is exactly the reverse of the post-order list
+
+The runtime for graph search algorithms is `O(vertices + edges)`.
 
 #### Dijkstra’s Algorithm
 
