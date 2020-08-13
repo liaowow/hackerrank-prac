@@ -313,6 +313,19 @@ A method for finding the shortest distance from a given point to every other poi
 
 The algorithm works by keeping track of all the distances and updating the distances as it conducts a **breadth-first** search. A common application of this algorithm is to find the quickest route from one destination to another.
 
+How it works:
+1. Instantiate a **dictionary** that will eventually map vertices to their distance from the start vertex
+2. Assign the start vertex a distance of `0` in a min heap
+3. Assign every other vertex a distance of `infinity` in a min heap
+4. Remove the vertex with the smallest distance from the min heap and set that to the current vertex
+5. For the current vertex, consider all of its adjacent vertices and calculate the distance to them as `(distance to the current vertex) + (edge weight of current vertex to adjacent vertex)`.
+6. If this new distance is **less than** the current distance, replace the current distance.
+7. Repeat 4 and 5 until the heap is empty
+8. After the heap is empty, return the distances
+
+The runtime for Dijkstra’s algorithm run is `O((V+E)log V)`:
+- In the worse case, we will visit `V+E` vertices and edges. 
+- In each visit, we may have to update our min heap which takes `log V` time.
 
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
