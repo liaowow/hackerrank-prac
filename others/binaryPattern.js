@@ -34,9 +34,31 @@ const binaryPatterns = (pattern, str) => {
   return matches
 }
 
-/* optimized solution */
+/* optimizing step 2 */
 const binaryPatternsOpt = (pattern, str) => {
+  let matches = 0
 
+  // step 1: turn str into 0 and 1
+  let digitsStr = ""
+  for (let char of str) {
+    if (/[aeiouy]/.test(char)) {
+      digitsStr += "0"
+    } else {
+      digitsStr += "1"
+    }
+  }
+  
+  // step 2: compare digitsStr against pattern
+  let stop = digitsStr.length - pattern.length
+  for (let i = 0; i <= stop; i++) {
+    let subStr = digitsStr.substr(i, pattern.length)
+
+    if (subStr === pattern) {
+      matches++
+    }
+  }
+
+  return matches
 }
 
 binaryPatterns("010", "amazing")
