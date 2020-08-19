@@ -27,6 +27,14 @@ function closestChar(str, query) {
       let neighbor1Dist = Math.abs(query - neighbor1)
       let neighbor2Dist = Math.abs(query - neighbor2)
 
+      if (!neighbor1) {
+        return neighbor2
+      }
+
+      if (!neighbor2) {
+        return neighbor1
+      }
+
       if (neighbor2Dist < neighbor1Dist) {
         return neighbor2
       } else {
