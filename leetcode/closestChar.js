@@ -40,10 +40,10 @@ function closestChar(str, query) {
       } else {
         return neighbor1
       }
+    } else {
+      return -1
     }
   }
-
-  return -1
 
 }
 
