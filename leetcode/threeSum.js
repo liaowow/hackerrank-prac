@@ -49,7 +49,17 @@ function threeSum(nums) {
     }
   }
 
-  return result
+  // OK, now we need to remove duplicate arrays within result:
+  // 1. stringify each inner array
+  let stringResult = result.map(JSON.stringify)
+
+  // 2. create a set
+  let uniqStringResult = new Set(stringResult)
+
+  // 3. going back to arrayville!
+  let uniqResult = Array.from(uniqStringResult, JSON.parse)
+
+  return uniqResult
 }
 
 threeSum([-1, 0, 1, 2, -1, -4])
@@ -57,3 +67,5 @@ threeSum([-1, 0, 1, 2, -1, -4])
 //   [-1, 0, 1],
 //   [-1, -1, 2]
 // ]
+
+// Resource on removing duplicate arrays from array: https://www.kirupa.com/javascript/removing_duplicate_arrays_from_array.htm
