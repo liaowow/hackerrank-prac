@@ -41,3 +41,60 @@ function sieveOfEratosthenes(maxNum) {
   }
   return primes
 }
+
+// alt implementation via Codecademy
+function sieveOfEratosthenes2(limit) {
+  // 1a. Create an array of all integers from 2 to n
+  // 1b. Set all elements of the array to true, except for 1st and 2nd element
+  const intArr = new Array(limit + 1).fill(true)
+  intArr[0] = false
+  intArr[1] = false
+
+  // 2a. Starting with 2, iterate through the array. If the current element is true, it is still considered prime. Since we know that all multiples of that number are NOT prime, iterate through all multiples of that number up to n and set them equal to false
+  // 2b. Change the current element to the next non-false index
+  for (let i = 2; i < intArr.length; i++) {
+    if (intArr[i]) {
+      for (let j = i * 2; j < intArr.length; j = j + i) {
+        intArr[j] = false
+      }
+    }
+  }
+
+  // 3. Return the corresponding number value for any element still marked as prime (value of true)
+  let result = []
+  for (let i = 0; i < intArr.length; i++) {
+    if (intArr[i]) {
+      result.push(i)
+    }
+  }
+  return result
+}
+
+// Codecademy's optimized solution
+function sieveOfEratosthenesOptimized(limit) {
+  // edge case
+  if (limit <= 1) {
+    return []
+  }
+
+  const intArr = new Array(limit + 1).fill(true)
+  intArr[0] = false
+  intArr[1] = false
+
+  // Iterate up to the square root of the limit
+  for (let i = 2; i < Math.pow(limit, 0.5); i++) {
+    if (intArr[i]) {
+      // Mark all multiples of i as non-prime
+      for (let j = Math.pow(i, 2); j < intArr.length; j = j + i) {
+        intArr[j] = false
+      }
+    }
+  }
+
+  // Remove non-prime numbers
+  return intArr.reduce((primes, current, idx) => {
+    if (current) {
+      primes.push(idx)
+    }
+  }, [])
+}
