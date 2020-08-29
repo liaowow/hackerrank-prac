@@ -97,3 +97,24 @@ function slowFib(n) {
 }
 
 fib = memoize(slowFib)
+
+
+/* Another way to memoize (via Codecademy) */
+const memo = {}
+function fibo(n) {
+    let val;
+    if (memo[n]) {
+        val = memo[n]
+    } else if (n === 0 || n === 1) {
+        val = n
+    } else {
+        val = fibo(n - 1) + fibo(n - 2)
+        memo[n] = val
+    }
+    return val
+}
+
+/* Optimized space complexity (via AlgoExperts) */
+function fibExpert(n) {
+    
+}
