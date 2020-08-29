@@ -117,6 +117,13 @@ function fibo(n) {
 /* Optimized space complexity (via AlgoExperts) */
 // O(n) time, O(1) space
 function fibExpert(n) {
-    let lastTwo = [0, 1]
-    
+    const lastTwo = [0, 1]
+    let counter = 2 // because calculating the numbers starting at idx 2
+    while (counter <= n) {
+        let nextFib = lastTwo[0] + lastTwo[1]
+        lastTwo[0] = lastTwo[1]
+        lastTwo[1] = nextFib
+        counter++
+    }
+    return n >= 1 ? lastTwo[1] : lastTwo[0]
 }
