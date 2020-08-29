@@ -115,6 +115,8 @@ function fibo(n) {
 }
 
 /* Optimized space complexity (via AlgoExperts) */
+// O(n) time, O(1) space
 function fibExpert(n) {
+    let lastTwo = [0, 1]
     
 }
