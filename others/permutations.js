@@ -22,7 +22,7 @@ function permutations(str) {
 
     for (let i = 0; i < str.length; i++) {
         let currentChar = str[i]
-        let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length)
+        let remainingStr = str.slice(0, i) + str.slice(i + 1)
         let remainingPermutation = permutations(remainingStr) // save the result of the recursive function
 
         // if we find a repeating character, don't add it to the arr
