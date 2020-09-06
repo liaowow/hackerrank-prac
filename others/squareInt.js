@@ -14,12 +14,13 @@ function squareTwoPointers(arr) {
   // create 2 pointers: i keeps track of negatives, j keeps track of positives
   let j = 0
   let i;
-
+  // keep moving j forward until arr[j] is a positive integer
+  // set i as one index before j 
   while (j < arr.length && arr[j] < 0) {
     j++
     i = j - 1
   }
-
+  // as long as i is not out of bound, compare the square of arr[i] and arr[j]
   while (j < arr.length && i >= 0) {
     if ((arr[i] * arr[i]) < (arr[j] * arr[j])) {
       result.push((arr[i] * arr[i]))
@@ -29,6 +30,8 @@ function squareTwoPointers(arr) {
       j++
     }
   }
+
+  // add the remaining elements to the resulting array 
 
   while (i >= 0) {
     result.push((arr[i] * arr[i]))
