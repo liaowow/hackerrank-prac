@@ -71,3 +71,26 @@ function anagrams2(stringA, stringB) {
 function cleanString(str) {
     return str.replace(/[^w]/g, '').toLowerCase().split('').sort().join('')
 }
+
+/* SOLUTION#3 */
+function anagram3(str1, str2) {
+    if (str1.length !== str2.length) return false
+    
+    const lookup = {}
+
+    for (let i = 0; i < str1.length; i++) {
+        const char = str1[i]
+        lookup[char] ? lookup[char] += 1 : lookup[char] = 1
+        // the following will add additional count
+        // lookup[char] = (lookup[char] || 1) + 1
+    }
+    
+    for (let i = 0; i < str2.length; i++) {
+        const char = str2[i]
+        if (!lookup[char]) {
+            return false
+        }
+        lookup[char]--
+    }
+    return true
+}
