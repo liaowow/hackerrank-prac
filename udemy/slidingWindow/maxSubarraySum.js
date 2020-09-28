@@ -20,17 +20,23 @@ function maxSubarraySum(arr, num) {
 
 /* sliding-window solution, O(n) time */
 function maxSubarraySumOptimized(arr, num) {
+  // edge case
   if (num > arr.length) return null
   
   let maxSum = 0
   let tempSum = 0
 
+  // create first sum
   for (let i = 0; i < num; i++) {
     maxSum += arr[i]
   }
 
+  // assign tempSum to first sum
+  tempSum = maxSum
+
+  // start with the position at num: subtract the first num in previous sum, add current num
   for (let i = num; i < arr.length; i++) {
-    tempSum = maxSum - arr[i - num] + arr[i]
+    tempSum = tempSum - arr[i - num] + arr[i]
     maxSum = Math.max(tempSum, maxSum)
   }
 
