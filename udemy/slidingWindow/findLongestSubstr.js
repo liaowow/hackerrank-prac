@@ -19,7 +19,9 @@ function findLongestSubstring(str) {
   return longest
 }
 
-/* Sean's solution - using Set() */
+/* Sean's solution - using Set() 
+https://dev.to/seanwelshbrown/find-the-length-of-the-longest-substring-without-repeating-characters-in-javascript-20pg
+*/
 function lengthOfLongestSubstring(str) {
   let a_pointer = 0;
   let b_pointer = 0;
