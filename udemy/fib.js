@@ -49,7 +49,7 @@ function fib2(n) {
     return fib2(n - 1) + fib2(n - 2)
 }
 
-/* SOLUTION#3 -- Use MEMOIZATION to improve the recursive case:
+/* SOLUTION#3, O(n) time & space -- Use MEMOIZATION to improve the recursive case:
 Store the argument of each function call along with the result.
 If the function is called again with the same args, 
 return the precomputed results (instead of running the funciton again).
@@ -113,6 +113,33 @@ function fibo(n) {
     }
     return val
 }
+
+/* Colt Steele's memoization/top-down approach:
+Dynamic Programming showcase -- solving complex problems by 
+identifying overlapping subproblems, solving them just once, and
+storing their solutions.
+*/
+function fibColt(n, memo = []) {
+    if (memo[n]) return memo[n]
+    if (n < 2) return n
+    const remaining = fibColt(n - 1, memo) + fibColt(n - 2, memo)
+    memo[n] = remaining
+    return remaining
+}
+
+/* Colt Steele's bottom-up approach:
+Tabulation -- Store the result of previous result in a table (usually array) via iteration,
+O(n) time, O(1) space
+*/
+function fibColtTab(n) {
+    if (n < 2) return 1
+    let fibNums = [0, 1, 1]
+    for (let i = 3; i <= n; i++) {
+        fibNums[i] = fibNums[i - 1] + fibNums[i - 2]
+    }
+    return fibNums[i]
+}
+
 
 /* Optimized space complexity (via AlgoExperts) */
 // O(n) time, O(1) space
