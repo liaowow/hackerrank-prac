@@ -27,3 +27,25 @@ function expandLength(str, left, right) {
   }
   return right - left - 1
 }
+
+// alt solution
+function longestPalindrome(str) {
+  let longest = ''
+
+  for (let i = 0; i < str.length; i++) {
+    const currPalindrome = findLongestPalindrome(str, i, i)
+    if (currPalindrome.length > longest.length) {
+      longest = currPalindrome
+    }
+  }
+
+  return longest.length > 2 ? longest : "none" 
+}
+
+function findLongestPalindrome(str, i, j) {
+  while (i >= 0 && j < str.length && str[i] === str[j]) {
+    i--
+    j++
+  }
+  return str.slice(i + 1, j)
+}
