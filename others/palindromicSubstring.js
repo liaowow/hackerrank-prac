@@ -49,3 +49,9 @@ function findLongestPalindrome(str, i, j) {
   }
   return str.slice(i + 1, j)
 }
+
+/* resources: 
+https://dev.to/alisabaj/the-longest-palindromic-substring-solving-the-problem-using-constant-space-1bch
+https://medium.com/@arichards4814/finding-the-longest-palindrome-substring-with-manachars-algorithm-in-javascript-18f3a778edb0
+https://medium.com/@bhprtk/longest-palindromic-substring-a8190fab03ff
+*/
