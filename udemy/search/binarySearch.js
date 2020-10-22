@@ -1,15 +1,15 @@
 function binarySearch(arr, val) {
-  let i = 0
-  let j = arr.length - 1
-  while (i < j) {
-    if (arr[i] === val) return i
-    if (arr[j] === val) return j
-    if (arr[i] < val) {
-      i++
+  let start = 0
+  let end = arr.length - 1
+  let middle = Math.floor((start + end) / 2)
+
+  while (arr[middle] !== val && start <= end) {
+    if (val < arr[middle]) {
+      end = middle - 1
+    } else {
+      start = middle + 1
     }
-    if (arr[j] > val) {
-      j--
-    }
+    middle = Math.floor((start + end) / 2)
   }
-  return -1
+  return arr[middle] === val ? middle : -1
 }
