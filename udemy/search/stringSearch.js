@@ -9,3 +9,8 @@ function stringSearch(str, pattern) {
   }
   return count
 }
+
+// KMP approach
+// link: http://benwendt.ca/articles/the-knuth-morris-pratt-algorithm-implemented-in-javascript/
+
+// bonus -- how indexOf() is implemented: https://gist.github.com/blasten/d42bd0d814b7df1addea
