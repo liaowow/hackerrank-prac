@@ -13,3 +13,14 @@ function isValidSubsequence(arr, sequence) {
 	
 	return currSeqIdx === sequence.length
 }
+
+// using while loop
+function isValidSubsequence(arr, sequence) {
+  let arrIdx = 0
+  let seqIdx = 0
+  while (arrIdx < arr.length && seqIdx < sequence.length) {
+    if (arr[arrIdx] === sequence[seqIdx]) seqIdx++
+    arrIdx++
+  }
+  return seqIdx === sequence.length
+}
