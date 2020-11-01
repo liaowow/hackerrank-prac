@@ -1,16 +1,14 @@
 function finalInstances(instances, avgUtil) {
+  const upperLimit = 2 * Math.pow(10, 8)
   for (let i = 0; i < avgUtil.length; i++) {
     const currUtil = avgUtil[i]
     if (currUtil < 25 && instances > 1) {
       instances = Math.ceil(instances / 2)
       i += 10
     }
-    if (currUtil > 60) {
-      const upperLimit = 2 * Math.pow(10, 8)
-      if ((instances * 2) < upperLimit) {
-        instances *= 2
-        i += 10
-      }
+    if (currUtil > 60 && (instances * 2) < upperLimit) {
+      instances *= 2
+      i += 10
     }
   }
   return instances
