@@ -327,6 +327,11 @@ The runtime for Dijkstra’s algorithm run is `O((V+E)log V)`:
 - In the worse case, we will visit `V+E` vertices and edges. 
 - In each visit, we may have to update our min heap which takes `log V` time.
 
+### Dynamic Programming
+- An instance where we have a large problem, and we can decompose it into same, smaller problems
+
+
+
 ## Resource
 - [Grokking Algorithm](https://www.manning.com/books/grokking-algorithms)
 - [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
@@ -335,3 +340,4 @@ The runtime for Dijkstra’s algorithm run is `O((V+E)log V)`:
 - [Udemy Coding Interview Bootcamp](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
 - [Codecademy: Pass the Technical Interview with JavaScript](https://www.codecademy.com/learn/paths/pass-the-technical-interview-with-javascript/)
 - [Time Complexity Analysis in JavaScript](https://www.jenniferbland.com/time-complexity-analysis-in-javascript/)
+- [Dynamic Programming 5-hour YouTube Tutorial](https://www.youtube.com/watch?v=oBt53YbR9Kk)
