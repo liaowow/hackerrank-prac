@@ -17,17 +17,42 @@ class Node {
     this.left = null
     this.right = null
   }
-
-  insert(newData) {
-    if (newData < this.data && this.left) {
-      // delegate newData to left-hand node
-      this.left.insert(newData)
-    } else if (newData < this.data) {
-      this.left = new Node(newData)
-    } else if (newData > this.data && this.right) {
-      this.right.insert(newData)
-    } else if (newData > this.data) {
-      this.right = new Node(newData)
+  // O(log(n)) time, O(log(n)) space
+  insertRecursively(newData) {
+    if (newData < this.data) {
+      if (this.left === null) {
+        this.left = new Node(newData);
+      } else {
+        // delegate newData to left-hand node
+        this.left.insert(newData)
+      }
+    } else {
+      if (this.right === null) {
+        this.right = new Node(newData)
+      } else {
+        this.right.insert(newData)
+      }
+    }
+  }
+  // O(n) time, O(1) space
+  insertIteratively(newData) {
+    let currNode = this;
+    while (true) {
+      if (newData < currNode.value) {
+        if (currNode.left === null) {
+          currNode.left = new Node(newData)
+          break;
+        } else {
+          currNode = currNode.left;
+        }
+      } else {
+        if (currNode.right === null) {
+          currNode.right = new Node(newData)
+          break;
+        } else {
+          currNode = currNode.right;
+        }
+      }
     }
   }
 
