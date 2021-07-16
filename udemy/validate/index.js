@@ -50,3 +50,25 @@ function helper(root, min, max) {
 };
 
 module.exports = validate;
+
+/* from algoExpert */
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function validateBst(tree) {
+	return helper(tree, -Infinity, Infinity);
+}
+
+function helper(tree, min = null, max = null) {
+	if (tree === null) return true;
+	
+	if ((tree.value < min || (tree.value >= max))) {
+		return false;
+	}
+	return helper(tree.left, min, tree.value) && helper(tree.right, tree.value, max);
+}
