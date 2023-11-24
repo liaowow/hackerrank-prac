@@ -40,6 +40,25 @@ function insertionSort(arr) {
 }
 
 
+/********** QUICK SORT **********/
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const pivotVal = arr[Math.floor(arr.length / 2)];
+  const leftArr = [];
+  const rightArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < pivotVal) {
+      leftArr.push(arr[i]);
+    } else if (arr[i] > pivotVal) {
+      rightArr.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(leftArr), pivotVal, ...quickSort(rightArr)];
+}
+
 /********** MERGE SORT **********/
 function mergeSort(arr) {
   if (arr.length <= 1) return arr;
