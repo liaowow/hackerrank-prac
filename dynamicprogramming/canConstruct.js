@@ -37,9 +37,10 @@ const canConstructMemo = (target, wordBank, memo ={}) => {
   return false;
 }
 
-console.log(canConstructMemo('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd'])); // true
-console.log(canConstructMemo('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar'])); // false
-console.log(canConstructMemo('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef', [
+console.log(canConstruct("applepenapple", ["apple","pen"])); // true
+console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd'])); // true
+console.log(canConstruct('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar'])); // false
+console.log(canConstruct('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef', [
   'e',
   'ee',
   'eee',

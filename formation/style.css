@@ -1,0 +1,147 @@
+/* START DO NOT EDIT THIS PORTION */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
+
+*,
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #152733;
+  overflow: hidden;
+}
+
+.form-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.form-holder .form-content {
+  align-items: center;
+  padding: 60px;
+}
+
+.form-content .form-items {
+  border: 3px solid #fff;
+  border-radius: 16px;
+  width: 100%;
+  min-width: 540px;
+  text-align: left;
+  padding: 30px;
+}
+
+.form-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.form-content p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-top: 0;
+  color: white;
+}
+
+.form-control, .form-select {
+  width: 97%;
+  margin: 5px 0;
+  border-radius: 8px;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.position-select .form-select {
+  width: 93%;
+}
+
+.form-select {
+  color: grey !important;
+}
+
+.gender_wrapper {
+  color: white;
+  margin: 15px 0;
+}
+
+.btn-primary {
+  background-color: #6c757d;
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.btn-check {
+  display: none;
+}
+
+label:not(:first-of-type) {
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.gender_wrapper label:last-of-type {
+  background-color: grey;
+  border-color: grey;
+}
+
+.form-check {
+  color: white;
+  margin: 15px 0;
+}
+
+.form-check-input {
+  border-radius: 8px;
+}
+
+.register-btn {
+  color: white;
+  background-color: grey;
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.form-content textarea {
+  position: static !important;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-align: left;
+  border: 0;
+  font-size: 15px;
+  font-weight: 300;
+  color: #8d8d8d;
+  outline: none;
+  resize: none;
+  height: 120px;
+  transition: none;
+  margin-bottom: 14px;
+}
+
+.form-content textarea:hover,
+.form-content textarea:focus {
+  border: 0;
+  background-color: #ebeff8;
+  color: #8d8d8d;
+}
+
+.valid,
+.invalid {
+  display: none;
+}
+/* END DO NOT EDIT THIS PORTION */
+
+/* Write custom style below */
